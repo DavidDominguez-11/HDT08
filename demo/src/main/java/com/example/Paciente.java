@@ -15,7 +15,8 @@ public class Paciente implements Comparable<Paciente> {
 
     @Override
     public int compareTo(Paciente otro) {
-        return this.codigoEmergencia - otro.codigoEmergencia;
+        // Ordenar de manera inversa: A (más alta prioridad) a E (menor prioridad)
+        return otro.codigoEmergencia - this.codigoEmergencia;
     }
 
     @Override
