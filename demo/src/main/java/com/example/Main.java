@@ -34,7 +34,7 @@ public class Main {
         System.out.println("Procesando atención de pacientes:");
         while (!emergencyQueue.isEmpty()) {
             Paciente nextPatient = emergencyQueue.remove();
-            System.out.println("Atendiendo a: " + nextPatient.toString());
+            System.out.println("Atender a: " + nextPatient.toString());
         }
     }
 }
