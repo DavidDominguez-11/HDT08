@@ -5,8 +5,24 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * Clase principal que ejecuta un programa de simulación de atención de emergencias utilizando colas de prioridad.
+ * Permite al usuario seleccionar entre dos tipos de colas de prioridad: VectorHeap personalizado o PriorityQueue del Java Collection Framework.
+ * Lee datos de pacientes desde un archivo, los inserta en la cola de prioridad seleccionada y los procesa en orden de prioridad.
+ * 
+ * @author David Dominguez
+ * @version 1.0
+ * @since 2024-04-08
+ */
 public class Main {
 
+    /**
+     * Método principal que inicia la ejecución del programa.
+     * Permite al usuario seleccionar el tipo de cola de prioridad y procesa los pacientes en orden de prioridad.
+     * Lee los datos de pacientes desde un archivo y los inserta en la cola de prioridad.
+     *
+     * @param args argumentos de línea de comandos (no utilizados en este programa)
+     */
     public static void main(String[] args) {
         // Crear un BufferedReader para leer la entrada del usuario
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
