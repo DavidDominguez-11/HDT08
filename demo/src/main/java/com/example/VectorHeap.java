@@ -2,7 +2,7 @@ package com.example;
 
 import java.util.ArrayList;
 
-public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E> {
+public class VectorHeap<E extends Comparable<E>> implements IPriorityQueue<E> {
     private ArrayList<E> heap;
 
     public VectorHeap() {

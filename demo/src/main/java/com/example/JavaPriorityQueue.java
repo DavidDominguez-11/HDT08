@@ -1,45 +1,44 @@
 package com.example;
 
+import java.util.Comparator;
 import java.util.PriorityQueue;
 
-public class JavaPriorityQueue<E extends Comparable<E>>{
-
-    private PriorityQueue<E> priorityQueue;
+public class JavaPriorityQueue<E extends Comparable<E>> implements IPriorityQueue<E> {
+    private PriorityQueue<E> queue;
 
     public JavaPriorityQueue() {
-        this.priorityQueue = new PriorityQueue<>();
+        // Usamos un Comparator personalizado para invertir el orden de comparación
+        Comparator<E> maxHeapComparator = Comparator.reverseOrder();
+        queue = new PriorityQueue<>(maxHeapComparator);
     }
 
-    
+    @Override
     public E getFirst() {
-        if (isEmpty()) {
-            throw new IllegalStateException("PriorityQueue is empty");
-        }
-        return priorityQueue.peek();
+        return queue.peek();
     }
 
+    @Override
     public E remove() {
-        if (isEmpty()) {
-            throw new IllegalStateException("PriorityQueue is empty");
-        }
-        return priorityQueue.poll();
+        return queue.poll();
     }
 
+    @Override
     public void add(E value) {
-        priorityQueue.add(value);
+        queue.add(value);
     }
 
+    @Override
     public boolean isEmpty() {
-        return priorityQueue.isEmpty();
+        return queue.isEmpty();
     }
 
+    @Override
     public int size() {
-        return priorityQueue.size();
+        return queue.size();
     }
 
+    @Override
     public void clear() {
-        priorityQueue.clear();
+        queue.clear();
     }
 }
-
-
